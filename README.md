@@ -12,7 +12,7 @@ Client:
 - UI
 
 ## Class diagram for CDK inventory
-![billy-cdk-class](https://i.imgur.com/OENko5C.png)
+![billy-cdk-class](https://i.imgur.com/OJtFcCS.png)
 
 ## Original version
 The [original version](https://github.com/valorad/C_cc/blob/master/BillyCDK%20x64.C) was developped in 2014 as a personal project after finishing C programming course.
