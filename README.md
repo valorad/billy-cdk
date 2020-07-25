@@ -4,7 +4,45 @@
 [![Image version](https://images.microbadger.com/badges/version/valorad/billy-cdk.svg)](https://microbadger.com/images/valorad/billy-cdk "billy-cdk Version")
 [![Image Info](https://images.microbadger.com/badges/image/valorad/billy-cdk.svg)](https://microbadger.com/images/valorad/billy-cdk "billy-cdk Image")
 
-BillyCDK Remastered Edition. Manage CDKey inventory and more. Featuring GraphQL.
+BillyCDK Remastered Edition. Manage CDKey inventory and more. Featuring C#, TypeScript, GraphQL, React-Redux and more.
+
+## Demo
+
+A demo has been uploaded to [Bilibili](https://www.bilibili.com/video/BV1uD4y1D7cf/) and [Youtube](https://youtu.be/SDYstk_ewAU).
+
+## Features
+Currently, you are automatically logged in as Billy, a super admin. The user info will be saved in the redux store after a successful log-in.
+
+![Cover](https://i.imgur.com/MPgWouv.png)
+
+### How to navigate
+
+The UI of BillyCDK is inspired by the Fallout 4 terminal.
+
+You can click the menu items with mouse clicking or by tapping, just like browsing a normal website.
+
+Also, since this is designed as a terminal interface, you can try navigating with your keyboard. Try selecting a menu with arrow keys, press "Enter" to go into a menu, or press "ESC" to go back. Besides, you can always press the "Home" key to go back to the main menu. Currently, to focus different items in a form interface (e.g. Add a new game window), you need to press the "Tab" key to switch your input focus.
+
+### Buy games from the store
+![Buygames](https://i.imgur.com/H00qLg6.png)
+
+### View the player list
+![ViewPlayers](https://i.imgur.com/zo4qwFN.png)
+
+### Manage the CDKeys
+![ManageCDKeys](https://i.imgur.com/43QQaet.png)
+
+### Manage players
+![ManagePlayers](https://i.imgur.com/zo4qwFN.png)
+Admins can manage the players. They can help to register a new player, edit the information of an existing player, or delete a player. 
+
+### Manage store games
+![ManageStoreGames](https://i.imgur.com/CT1r1ad.png)
+Admins have the privilege to manage the store. They can publish a new game, edit the details of the existing games, or delete a game.
+
+### Issue CDKeys for games
+![IssueCDKeys](https://i.imgur.com/Ta0g5tI.png)
+Admin can issue CDKeys for a certain game. To to that, you need a CDKey value prepared in advance.
 
 ## Todo
 
@@ -16,6 +54,7 @@ Server:
 
 Client:
 - UI
+- i18n
 
 ## Class diagram for CDK inventory
 ![billy-cdk-class](https://i.imgur.com/CzKKRgY.png)
@@ -30,7 +69,9 @@ Client:
 
 - `appsettings.yaml` for appliaction settings.
 
-  Note: Do remember to specify the Kestrel Url in `appsettings.yaml`, otherwise, you cannot access the server! Refer to `server/App/appsettings.Development.yaml` for hints or refer to section [ListenOptions.UseHttps](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/servers/kestrel?view=aspnetcore-3.1#listenoptionsusehttps) on article "Kestrel web server implementation in ASP.NET Core".
+  - Set a `basePath` if the server is behind a reverse-proxy (e.g. Nginx, Kubernetes)
+
+  - Do remember to specify the Kestrel Url in `appsettings.yaml`, otherwise, you cannot access the server! Refer to `server/App/appsettings.Development.yaml` for hints or refer to section [ListenOptions.UseHttps](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/servers/kestrel?view=aspnetcore-3.1#listenoptionsusehttps) on article "Kestrel web server implementation in ASP.NET Core".
 
 ### Docker
 
@@ -68,4 +109,4 @@ Github has a problem accessing the git submodule with relative paths. You can ac
 
 
 ## Original version
-The [original version](https://github.com/valorad/C_cc/blob/master/BillyCDK%20x64.C) was developped in 2014 as a personal project after finishing C programming course.
+The [original version](https://github.com/valorad/C_cc/blob/master/BillyCDK%20x64.C) was developed in 2014 as a personal project after finishing the C programming course.
