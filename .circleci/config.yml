@@ -1,0 +1,25 @@
+---
+
+version: 2.1
+orbs:
+  docker: circleci/docker@1.4.0
+workflows:
+    mainPipe:
+      jobs:
+        - docker/publish:
+            filters:
+              branches:
+                only: circleci-project-setup
+            context: context0
+            docker-username: GITHUB_LOGIN
+            docker-password: GITHUB_TOKEN
+            registry: docker.pkg.github.com
+            after_checkout:
+              - run:
+                  name: Fetch Submodules
+                  command: |
+                    git submodule sync
+                    git submodule update --init
+            dockerfile: dockerfile
+            image: valorad/billy-cdk
+            update-description: false
