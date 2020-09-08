@@ -4,6 +4,9 @@
 [![Image version](https://images.microbadger.com/badges/version/valorad/billy-cdk.svg)](https://microbadger.com/images/valorad/billy-cdk "billy-cdk Version")
 [![Image Info](https://images.microbadger.com/badges/image/valorad/billy-cdk.svg)](https://microbadger.com/images/valorad/billy-cdk "billy-cdk Image")
 
+[![CircleCI](https://circleci.com/gh/valorad/billy-cdk/tree/circleci-project-setup.svg?style=svg)](https://circleci.com/gh/valorad/billy-cdk)
+
+
 BillyCDK Remastered Edition. Manage CDKey inventory and more. Featuring C#, TypeScript, GraphQL, React-Redux and more.
 
 ## Demo
@@ -33,7 +36,7 @@ Also, since this is designed as a terminal interface, you can try navigating wit
 ![ManageCDKeys](https://i.imgur.com/43QQaet.png)
 
 ### Manage players
-![ManagePlayers](https://i.imgur.com/zo4qwFN.png)
+![ManagePlayers](https://i.imgur.com/UN6krEA.png)
 Admins can manage the players. They can help to register a new player, edit the information of an existing player, or delete a player. 
 
 ### Manage store games
@@ -53,7 +56,7 @@ Server:
 - ❌ Platform management (restart, download, delete)
 
 Client:
-- UI
+- UI ✔
 - i18n
 
 ## Class diagram for CDK inventory
@@ -81,8 +84,8 @@ Run:
 docker run -d \
 --network my-vps-main-network \
 --name billy-cdk-c1 \
--v /path/2/appsettings.yaml:/www/billyCDK/appsettings.yaml \
--v /path/2/secrets.yaml:/www/billyCDK/secrets.yaml \
+-v /path/2/appsettings.yaml:/workspace/www/billyCDK/appsettings.yaml \
+-v /path/2/secrets.yaml:/workspace/www/billyCDK/secrets.yaml \
 valorad/billy-cdk:latest
 ```
 
@@ -92,12 +95,13 @@ valorad/billy-cdk:latest
 
 - Download the release version, extract files, and locate the directory.
 
+- Create your own `appsettings.yaml` and `secrets.yaml` in that directory.
+
 - Run:
 
   ``` bash
   dotnet BillyCDK.dll
   ```
-
 
 ## Links to git submodule of this repo
 

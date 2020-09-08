@@ -1,15 +1,4 @@
-FROM node:14-alpine as builder-client
-
-WORKDIR /build
-
-ADD ./client ./
-
-RUN echo " --- Building Client --- " \
- && yarn install --frozen-lockfile \
- && yarn build
-
-# ============================================================
-FROM mcr.microsoft.com/dotnet/core/sdk:3.1-alpine AS builder-server
+FROM mcr.microsoft.com/dotnet/core/sdk:3.1-alpine AS builder
 
 WORKDIR /src
 
@@ -25,8 +14,7 @@ ARG BASE_DIR=/workspace/www/billyCDK
 
 WORKDIR ${BASE_DIR}
 
-COPY --from=builder-server /dist .
-COPY --from=builder-client /build/build ./wwwroot/
+COPY --from=builder /dist .
 
 VOLUME ${BASE_DIR}"/appsettings.yaml"
 VOLUME ${BASE_DIR}"/secrets.yaml"

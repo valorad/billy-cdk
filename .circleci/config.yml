@@ -1,13 +1,25 @@
-# Use the latest 2.1 version of CircleCI pipeline process engine. See: https://circleci.com/docs/2.0/configuration-reference
+---
+
 version: 2.1
-# Use a package of configuration called an orb.
 orbs:
-  # Declare a dependency on the welcome-orb
-  welcome: circleci/welcome-orb@0.4.1
-# Orchestrate or schedule a set of jobs
+  docker: circleci/docker@1.4.0
 workflows:
-  # Name the workflow "welcome"
-  welcome:
-    # Run the welcome/run job in its own container
-    jobs:
-      - welcome/run
+    mainPipe:
+      jobs:
+        - docker/publish:
+            filters:
+              branches:
+                only: circleci-project-setup
+            context: context0
+            docker-username: GITHUB_LOGIN
+            docker-password: GITHUB_TOKEN
+            registry: docker.pkg.github.com
+            after_checkout:
+              - run:
+                  name: Fetch Submodules
+                  command: |
+                    git submodule sync
+                    git submodule update --init
+            dockerfile: dockerfile
+            image: valorad/billy-cdk
+            update-description: false
