@@ -7,7 +7,7 @@
 [![CircleCI](https://circleci.com/gh/valorad/billy-cdk/tree/circleci-project-setup.svg?style=svg)](https://circleci.com/gh/valorad/billy-cdk)
 
 
-BillyCDK Remastered Edition. Manage CDKey inventory and more. Featuring C#, TypeScript, GraphQL, React-Redux and more.
+BillyCDK Remastered Edition. Manage CDKey inventory and more. Featuring C#, TypeScript, GraphQL, React-Redux, and more.
 
 ## Demo
 
@@ -16,7 +16,7 @@ A demo has been uploaded to [Bilibili](https://www.bilibili.com/video/BV1uD4y1D7
 ## Features
 Currently, you are automatically logged in as Billy, a super admin. The user info will be saved in the redux store after a successful log-in.
 
-![Cover](https://i.imgur.com/MPgWouv.png)
+![Cover](https://i.imgur.com/L0gHjk2.png)
 
 ### How to navigate
 
@@ -27,25 +27,42 @@ You can click the menu items with mouse clicking or by tapping, just like browsi
 Also, since this is designed as a terminal interface, you can try navigating with your keyboard. Try selecting a menu with arrow keys, press "Enter" to go into a menu, or press "ESC" to go back. Besides, you can always press the "Home" key to go back to the main menu. Currently, to focus different items in a form interface (e.g. Add a new game window), you need to press the "Tab" key to switch your input focus.
 
 ### Buy games from the store
-![Buygames](https://i.imgur.com/H00qLg6.png)
+![Buygames](https://i.imgur.com/GddTI4f.png)
+
+You can buy a game from the store. After purchasing a game for yourself, the game item will appear in your game inventory directly (No CDKey entering required).
 
 ### View the player list
-![ViewPlayers](https://i.imgur.com/zo4qwFN.png)
+![ViewPlayers](https://i.imgur.com/ImbltuN.png)
+You can view a list of all players. And currently, all players are assumed to be your friends.
 
 ### Manage the CDKeys
-![ManageCDKeys](https://i.imgur.com/43QQaet.png)
+![ManageCDKeys](https://i.imgur.com/NOZk7vB.png)
+You can take a look at the CDKeys you own at the CDKey inventory. You may choose to activate a new game by entering an existing inactivated CDKey.
 
 ### Manage players
-![ManagePlayers](https://i.imgur.com/UN6krEA.png)
-Admins can manage the players. They can help to register a new player, edit the information of an existing player, or delete a player. 
+![ManagePlayers](https://i.imgur.com/J82KiyX.png)
+
+Admins can manage the players. They can help register a new player, edit the information of an existing player, or delete a player. 
 
 ### Manage store games
-![ManageStoreGames](https://i.imgur.com/CT1r1ad.png)
+![ManageStoreGames](https://i.imgur.com/JPTYtLq.png)
+
 Admins have the privilege to manage the store. They can publish a new game, edit the details of the existing games, or delete a game.
 
+### Publish a new game
+![PublishNewGame](https://i.imgur.com/Wk4xwr4.png)
+
+Admins can publish a new game.
+
 ### Issue CDKeys for games
-![IssueCDKeys](https://i.imgur.com/Ta0g5tI.png)
-Admin can issue CDKeys for a certain game. To to that, you need a CDKey value prepared in advance.
+![IssueCDKeys](https://i.imgur.com/rlPEAal.png)
+
+Admin can issue CDKeys for a certain game. To do that, you need a CDKey value prepared in advance.
+
+### Switch language
+![SwitchLanguage](https://i.imgur.com/luUGBJb.png)
+
+You can switch languages at the main menu. Translations are provided in English, French, and Chinese Simplified.
 
 ## Todo
 
@@ -57,7 +74,7 @@ Server:
 
 Client:
 - UI ✔
-- i18n
+- i18n ✔
 
 ## Class diagram for CDK inventory
 ![billy-cdk-class](https://i.imgur.com/CzKKRgY.png)
